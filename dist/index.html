@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Быки и коровы</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body class="default-layout">
+    <div class="start default-layout">
+      <h1 class="start__title">Быки и коровы</h1>
+      <form class="hardness-form">
+        <input class="start__hardness-choose visually-hidden" id="hardness-choose-hard" type="radio" name="hardness-choose" value="true" checked>
+        <label class="start__hardness-label" for="hardness-choose-hard">Сложно</label>
+        <input class="start__hardness-choose visually-hidden" id="hardness-choose-easy" type="radio" name="hardness-choose" value="false">
+        <label class="start__hardness-label" for="hardness-choose-easy">Легко</label>
+      </form>
+      <button class="button start__button" type="button">Старт</button><a class="button start__rules-button" href="https://ru.wikipedia.org/wiki/Быки_и_коровы">Правила</a>
+    </div>
+    <section class="content default-layout display-none"> 
+      <div class="content-input">
+        <label class="visually-hidden" for="hidden-input">Введите число</label>
+        <input class="content-input__hidden-input visually-hidden" id="hidden-input" type="text" inputmode="numeric" pattern="d*" maxlength="4" autocomplete="off">
+        <p class="content-input__visual content-input__visual_one"></p>
+        <p class="content-input__visual content-input__visual_two"></p>
+        <p class="content-input__visual content-input__visual_three"></p>
+        <p class="content-input__visual content-input__visual_four"></p>
+      </div>
+      <button class="handle-input button" type="button">Проверить</button>
+      <div class="table">
+        <p class="table__heading">No </p>
+        <p class="table__heading">Число</p>
+        <p class="table__heading">Быки</p>
+        <p class="table__heading">Коровы</p>
+      </div>
+    </section>
+    <div class="default-layout end-block display-none">
+      <div class="endgame">
+        <h2 class="endgame__title">Вы угадали!</h2>
+        <button class="button endgame__button">ЕщЁ раз</button>
+      </div>
+    </div>
+    <script src="./scripts/index.js" type="module"></script>
+  </body>
+</html>

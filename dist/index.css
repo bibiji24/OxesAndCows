@@ -1,0 +1,283 @@
+@charset "UTF-8";
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+main,
+div,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: RobotoSlab;
+  src: url(./fonts/RobotoSlab-Regular.ttf);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: RobotoSlab;
+  src: url(./fonts/RobotoSlab-Bold.ttf);
+  font-weight: 700;
+  font-display: swap;
+}
+.default-layout {
+  min-height: 100dvb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  font-family: RobotoSlab, sans-serif;
+  background-color: #E9EFA8;
+}
+
+.button {
+  font-family: RobotoSlab, sans-serif;
+  font-size: clamp(24px, 6.67vmin, 4px);
+  block-size: 2.66em;
+  inline-size: max(50vmin, 120px);
+  line-height: 1.33;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: clamp(32px, 1.33em, 84px);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.button:focus {
+  outline: none;
+}
+.button:focus-visible {
+  outline: 2px solid #0F551E;
+}
+.button:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.button:active {
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+}
+.start__button {
+  background-color: #51B166;
+  color: #fff;
+}
+.start__title {
+  font-size: clamp(32px, 9.72vmin, 105px);
+  color: #0F551E;
+  text-align: center;
+}
+.start__hardness-label {
+  position: relative;
+  display: block;
+  padding-inline: 25px;
+  padding-block: 10px;
+  color: #0F551E;
+  background-color: transparent;
+}
+.start__hardness-label:first-of-type {
+  -webkit-margin-end: 50px;
+          margin-inline-end: 50px;
+}
+.start__hardness-choose:checked + .start__hardness-label {
+  z-index: 3;
+  color: #fff;
+}
+.start__hardness-choose:checked + .start__hardness-label:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: 1em;
+  background-color: #0F551E;
+  -webkit-animation: hardness 0.5s linear infinite alternate;
+          animation: hardness 0.5s linear infinite alternate;
+}
+.start__rules-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: RobotoSlab, sans-serif;
+  background-color: #999;
+  text-decoration: none;
+  color: #fff;
+}
+
+.hardness-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.content .content-input {
+  -webkit-margin-before: 10vmin;
+          margin-block-start: 10vmin;
+  inline-size: min(100vmin, 828px);
+  padding-inline: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.content .content-input .content-input__visual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  inline-size: min(20vmin, 162px);
+  aspect-ratio: 1/1;
+  border: 2px solid #51B166;
+  border-radius: 20%;
+  font-size: clamp(32px, 9.72vmin, 105px);
+  vertical-align: middle;
+  color: #0F551E;
+  background-color: #ccc;
+}
+.content .content-input:has(.content-input__hidden-input:focus) .content-input__visual {
+  outline: 2px solid #0F551E;
+  border: 2px solid #0F551E;
+}
+.content .handle-input {
+  -webkit-margin-before: 50px;
+          margin-block-start: 50px;
+  color: #fff;
+  background-color: #51B166;
+}
+.content .table {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr 2fr;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: 5px;
+  -webkit-margin-before: 10vmin;
+          margin-block-start: 10vmin;
+  inline-size: min(100vmin, 828px);
+  padding-inline: 20px;
+  border: 2px solid #51B166;
+}
+.content .table p {
+  display: block;
+  padding-block: 5px;
+  -webkit-border-after: 2px solid #0F551E;
+          border-block-end: 2px solid #0F551E;
+  text-align: center;
+}
+.content .table__heading {
+  font-weight: 700;
+}
+
+.endgame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  inline-size: min(89.16vmin, 828px);
+  padding-block: 50px;
+  gap: 50px;
+  background-color: #51B166;
+  border-radius: 25px;
+}
+.endgame__title {
+  font-size: clamp(32px, 9.72vmin, 105px);
+  color: #fff;
+}
+.endgame__button {
+  background-color: #fff;
+  color: #51B166;
+}
+
+.display-none {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute; /* элемент вырывают из потока */
+  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
+  height: 1px;
+  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+  clip: rect(0 0 0 0); /* это свойство обрезает видимую область до нулевого значения */
+  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
+}
+
+@-webkit-keyframes hardness {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes hardness {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}

@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+main,
+div,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: RobotoSlab;
+  src: url("fonts/RobotoSlab-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: RobotoSlab;
+  src: url("fonts/RobotoSlab-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+
+.default-layout {
+  min-height: 100dvb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  font-family: RobotoSlab, sans-serif;
+  background-color: #E9EFA8;
+}
