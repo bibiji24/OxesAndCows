@@ -1,0 +1,10 @@
+.default-layout {
+  min-height: 100dvb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: $font-family, sans-serif;
+  background-color: #E9EFA8;
+}

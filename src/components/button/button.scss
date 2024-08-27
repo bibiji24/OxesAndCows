@@ -1,0 +1,27 @@
+.button {
+    font-family: $font-family, sans-serif;
+    font-size: clamp(24px, 6.67vmin, 4px);
+    block-size: 2 * 1em * 1.33;
+    inline-size: max(50vmin, 120px);
+    line-height: 1.33;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: clamp(32px, 1.33em, 84px);
+    transition: transform 0.3s;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid #0F551E;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}

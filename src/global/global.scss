@@ -1,0 +1,15 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body,
+main,
+div,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}

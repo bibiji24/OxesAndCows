@@ -1,0 +1,19 @@
+.endgame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    inline-size: min(89.16vmin, 828px);
+    padding-block: 50px;
+    gap: 50px;
+    background-color: #51B166;
+    border-radius: 25px;
+    &__title {
+        font-size: clamp(32px, 9.72vmin, 105px);
+        color: #fff;
+    }
+
+    &__button {
+        background-color: #fff;
+        color: #51B166;
+    }
+}
