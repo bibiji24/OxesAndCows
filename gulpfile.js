@@ -14,7 +14,7 @@ const sass = require('gulp-sass')(require('sass'));
 function serve() {
   browserSync.init({
     server: {
-      baseDir: './dist'
+      baseDir: './docs'
     }
   });
 }
@@ -29,7 +29,7 @@ function layoutsScss() {
         .pipe(sass())
         .pipe(concat('bundle.css'))
         .pipe(postcss(plugins))
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('docs/'))
         .pipe(browserSync.reload({stream: true}));
 }
 
@@ -42,7 +42,7 @@ function pagesScss() {
   return gulp.src('src/pages/**/*.scss')
         .pipe(sass())
         .pipe(postcss(plugins))
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('docs/'))
         .pipe(browserSync.reload({stream: true}));
 }
 
@@ -51,7 +51,7 @@ function pug() {
         .pipe(gulpPug({
           pretty: true
         }))
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('docs/'))
         .pipe(browserSync.reload({stream: true}));
 }
 
@@ -73,7 +73,7 @@ function html() {
 		      const buferFile = Buffer.from(htmlMinify.minify(file.contents.toString(), options))
 		      return file.contents = buferFile
 		    })
-				.pipe(gulp.dest('dist/'))
+				.pipe(gulp.dest('docs/'))
         .pipe(browserSync.reload({stream: true}));
 }
 
@@ -86,30 +86,30 @@ function css() {
         .pipe(plumber())
         .pipe(concat('bundle.css'))
         .pipe(postcss(plugins))
-				.pipe(gulp.dest('dist/'))
+				.pipe(gulp.dest('docs/'))
         .pipe(browserSync.reload({stream: true}));
 }
 
 function images() {
   return gulp.src('src/**/*.{jpg,png,svg,gif,ico,webp,avif}')
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('docs/'))
     .pipe(browserSync.reload({stream: true}));
 }
 
 function scripts() {
   return gulp.src('src/**/*.js')
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('docs/'))
     .pipe(browserSync.reload({stream: true}));
 }
 
 function fonts() {
   return gulp.src('src/**/*.{woff2,woff,ttf}')
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('docs/'))
     .pipe(browserSync.reload({stream: true}));
 }
 
 function clean() {
-  return del('dist');
+  return del('docs');
 }
 
 function watchFiles() {
